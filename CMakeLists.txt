@@ -1,10 +1,12 @@
-cmake_minimum_required(VERSION 4.0)
+cmake_minimum_required(VERSION 3.16)
 project(Calculator--)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Calculator-- main.cpp)
-
 if(WIN32)
     set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++ -static")
 endif()
+
+add_executable(Calculator--Console main_gui.cpp)
+
+add_executable(Calculator--GUI WIN32 main_gui.cpp)
