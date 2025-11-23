@@ -1,0 +1,34 @@
+# --- Build Directories ---
+cmake-build-*/
+build/
+bin/
+lib/
+
+# --- CMake Artifacts ---
+CMakeCache.txt
+CMakeFiles/
+*.cmake
+!CMakeLists.txt
+Makefile
+
+# --- IDE Settings (CLion) ---
+.idea/
+*.iml
+
+# --- Compiled Binaries & Executables ---
+*.exe
+*.out
+*.app
+*.dll
+*.so
+*.dylib
+
+# --- Object Files ---
+*.o
+*.obj
+*.a
+*.lib
+
+# --- OS System Files ---
+.DS_Store
+Thumbs.db
