@@ -20,8 +20,8 @@ void print_confusing_answer(double a, double b, char op) {
     default:  correct = 0; break;
     }
 
-    double option1 = correct / 2.0;
-    double option2 = correct * 2.0;
+    long long option1 = std::lround(correct / 2.0);
+    long long option2 = std::lround(correct * 2.0);
 
     cout << "Result: " << a << " " << op << " " << b << " = either " << option1 << " or " << option2 << endl;
 }

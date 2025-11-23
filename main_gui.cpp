@@ -98,12 +98,10 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) 
             else if (g_op == L'*') res = g_val1 * g_val2;
             else if (g_op == L'/') res = (g_val2 != 0 ? g_val1 / g_val2 : 0);
 
-            double o1 = res / 2.0;
-            double o2 = res * 2.0;
-            std::wstring msg = L"either " + std::to_wstring(o1) + L" or " + std::to_wstring(o2);
+            long long o1 = std::lround(res / 2.0);
+            long long o2 = std::lround(res * 2.0);
 
-            size_t dot = msg.find(L".000000");
-            while (dot != std::wstring::npos) { msg.replace(dot, 7, L""); dot = msg.find(L".000000"); }
+            std::wstring msg = L"either " + std::to_wstring(o1) + L" or " + std::to_wstring(o2);
 
             SetWindowText(hDisplay, msg.c_str());
             SetTimer(hwnd, 4, 2000, NULL);
